@@ -1,0 +1,7 @@
+*
+!.gitignore
+!Prediction.py
+!Training.py
+!*.csv
+!README.md
+!Dockerfile
