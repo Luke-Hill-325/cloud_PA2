@@ -1,5 +1,3 @@
-import requests
-
 from pyspark.ml import Pipeline
 from pyspark.ml.feature import VectorAssembler, Normalizer, StandardScaler
 from pyspark.ml.classification import LogisticRegression

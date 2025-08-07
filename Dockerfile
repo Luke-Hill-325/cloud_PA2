@@ -1,10 +1,10 @@
-from apache/spark:4.0.0-python3
+FROM apache/spark:python3
 
-workdir /opt/app
+WORKDIR /opt/spark/work-dir
 
-copy Predictions.py /opt/app
-copy ValidationDataset.csv /opt/app
+COPY Predictions.py /opt/spark/work-dir
+COPY ValidationDataset.csv /opt/spark/work-dir
 
-run pip install --no-cache-dir pandas numpy findspark
+RUN pip install --trusted-host pypi.python.org --no-cache-dir --target="packages" pandas numpy findspark
 
-cmd ["python", "Predictions.py"]
+CMD ["python3", "Predictions.py"]
