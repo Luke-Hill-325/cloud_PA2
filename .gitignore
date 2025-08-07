@@ -1,6 +1,6 @@
 *
 !.gitignore
-!Prediction.py
+!Predictions.py
 !Training.py
 !*.csv
 !README.md
