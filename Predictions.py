@@ -10,8 +10,8 @@ from pyspark.sql.session import SparkSession
 
 spark = SparkSession.builder.master('local').appName('PA2_Predictions').getOrCreate()
 
-training_data = spark.read.format('csv').options(header='true', inferSchema='true', sep=';').load('/home/ubuntu/PA2/TrainingDataset.csv')
-test_data = spark.read.format('csv').options(header='true', inferSchema='true', sep=';').load('/home/ubuntu/PA2/ValidationDataset.csv')
+training_data = spark.read.format('csv').options(header='true', inferSchema='true', sep=';').load('/opt/app/TrainingDataset.csv')
+test_data = spark.read.format('csv').options(header='true', inferSchema='true', sep=';').load('/opt/app/ValidationDataset.csv')
 
 for data_frame in [training_data, test_data]:
     for col_header in data_frame.columns:

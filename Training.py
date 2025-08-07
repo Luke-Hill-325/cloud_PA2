@@ -16,8 +16,8 @@ from pyspark.ml.tuning import CrossValidator, ParamGridBuilder
 
 spark = SparkSession.builder.appName("CS643_PA2").getOrCreate()
 
-training_data = spark.read.format('csv').options(header='true', inferSchema='true', sep=';').load('/home/ubuntu/PA2/TrainingDataset.csv')
-validation_data = spark.read.format('csv').options(header='true', inferSchema='true', sep=';').load('/home/ubuntu/PA2/ValidationDataset.csv')
+training_data = spark.read.format('csv').options(header='true', inferSchema='true', sep=';').load('/opt/app/TrainingDataset.csv')
+validation_data = spark.read.format('csv').options(header='true', inferSchema='true', sep=';').load('/opt/app/ValidationDataset.csv')
 
 for data_frame in [training_data, validation_data]:
     for col_header in data_frame.columns:
